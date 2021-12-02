@@ -1,7 +1,7 @@
-const configsignature = {
+const configSync = {
     "certificate_alias":"APITESTE",
     "documents_destination":"AWS_S3",
-    "mode":"async",
+    "mode":"sync",
     "type":"CMS-attached",
     "notification_callback":"http://endpointx.com?tcn=",
     "hash_algorithm":"SHA1",
@@ -9,9 +9,8 @@ const configsignature = {
     "auto_fix_document":"",
     "tsa_server_id":"",
     "tsa_hash_algorithm":"",
-    "documents_source":"UPLOAD_REFERENCE",
-    "documents":""
+    "documents_source":"DATA_URL"
 }
 
-module.exports = configsignature ; 
+module.exports = configSync ; 
 
