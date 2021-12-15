@@ -13,13 +13,15 @@ module.exports = router;
 
 function authenticate(req,res){
     const {login,otp} = req.body;
-    console.log(login,otp)
+    console.log(req.body)
     axios.post(`${process.env.CESS_URL}/oauth/pwd_authorize`,{
         client_id:process.env.CLIENT_ID_CESS,
         client_secret:process.env.CLIENT_SECRET_CESS,
         username:login,
         password:otp,
-        grant_type:"password"
+        grant_type:"password",
+        lifetime:"604800",
+        scope:'signature_session'
     })
     .then((response)=>{
         console.log(response);
